@@ -23,13 +23,12 @@ local generate_new_finder = function()
     return finders.new_table({
         results = prepare_results(harpoon.get_mark_config().marks),
         entry_maker = function(entry)
-            local ordinal = entry.index .. " - " .. entry.filename
+            local ordinal = entry.index .. " " .. entry.filename
             local line = entry.filename .. ":" .. entry.row .. ":" .. entry.col
             local displayer = entry_display.create({
-                separator = " - ",
+                separator = " ",
                 items = {
                     { width = 2 },
-                    { width = 50 },
                     { remaining = true },
                 },
             })
