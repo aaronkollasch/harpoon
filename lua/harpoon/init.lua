@@ -82,7 +82,9 @@ HarpoonConfig = HarpoonConfig or {}
 local function merge_table_impl(t1, t2)
     for k, v in pairs(t2) do
         if type(v) == "table" then
-            if type(t1[k]) == "table" then
+            if k == "file_keymaps" then
+                t1[k] = v
+            elseif type(t1[k]) == "table" then
                 merge_table_impl(t1[k], v)
             else
                 t1[k] = v
