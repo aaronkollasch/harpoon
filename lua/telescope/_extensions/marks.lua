@@ -120,16 +120,17 @@ return function(opts)
         sorter = conf.generic_sorter(opts),
         previewer = conf.grep_previewer(opts),
         attach_mappings = function(_, map)
-            -- map("i", "<c-d>", delete_harpoon_mark)
-            -- map("n", "<c-d>", delete_harpoon_mark)
+            map("i", "<c-d>", delete_harpoon_mark)
+            map("n", "<c-d>", delete_harpoon_mark)
 
-            -- map("i", "<c-p>", move_mark_up)
-            -- map("n", "<c-p>", move_mark_up)
+            map("i", "<c-p>", move_mark_up)
+            map("n", "<c-p>", move_mark_up)
 
-            -- map("i", "<c-n>", move_mark_down)
-            -- map("n", "<c-n>", move_mark_down)
-            map("i", "<c-n>", require('telescope.actions').close)
-            map("n", "<c-n>", require('telescope.actions').close)
+            map("i", "<c-n>", move_mark_down)
+            map("n", "<c-n>", move_mark_down)
+
+            map("i", "<c-s>", require('telescope.actions').close)
+            map("n", "<c-s>", require('telescope.actions').close)
             return true
         end,
     }):find()

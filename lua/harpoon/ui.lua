@@ -196,7 +196,7 @@ function M.toggle_quick_menu()
     vim.api.nvim_buf_set_keymap(
         Harpoon_bufh,
         "n",
-        "<C-n>",
+        "<C-s>",
         "<Cmd>lua require('harpoon.ui').toggle_quick_menu()<CR>",
         { silent = true }
     )
